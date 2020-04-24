@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+</head>
+
+<body style="background-color: rgb(39, 4, 68)">
+    <div class="login" style="justify-content: center">
+        <h1>Income Prediction </h1>
+        <div>
+            <form action="{{url_for('predict')}}" method="POST">
+                <label>Candicate's Years of Experience: </label>
+                <input type="text" name="experience" placeholder="Experience" required='required' autocomplete="off">
+                <br>
+                <br>
+                <label>Candicate's Score in the Test: </label>
+                <input type="text" name="test_score" placeholder="Test Score" required='required' autocomplete="off">
+                <br>
+                <br>
+                <label>Candicate's Score in the Interview: </label>
+                <input type="text" name="interview_score" placeholder="Interview Score" required='required' autocomplete="off">
+                <br>
+                <br>
+                <button id="button" type="submit">Linear Regression Prediction</button>
+            </form>
+        </div>
+        <h1> {{ prediction_text }}</h1>
+    </div>
+</body>
+
+</html>
